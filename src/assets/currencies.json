@@ -1,0 +1,11 @@
+[ {
+    code: 'EURO',
+    name: ''
+    currency_type: '',
+    code_iso_numeric3: 0,
+    code_iso_alpha3: 0,
+    symbol: '',
+    native_symbol: '',
+    decimal_e: 0,
+    category: '',
+}]
