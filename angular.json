@@ -33,6 +33,14 @@
             "scripts": []
           },
           "configurations": {
+            "mock": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.mock.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -70,6 +78,9 @@
           "configurations": {
             "production": {
               "browserTarget": "currency-catalog:build:production"
+            },
+            "mock": {
+              "browserTarget": "currency-catalog:build:mock"
             }
           }
         },

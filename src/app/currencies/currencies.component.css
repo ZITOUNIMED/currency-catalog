@@ -1,0 +1,9 @@
+.item {
+    /*text-align: center;*/
+    border: 1px solid black;
+}
+
+.fixed-select-field{
+    width: 100px !important;
+    height: 30px !important;
+}

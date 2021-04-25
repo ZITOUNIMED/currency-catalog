@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CurrencyDetailsComponent } from './currency/currency-details/currency-details.component';
-import { CurrencyComponent } from './currency/currency.component';
+import { CurrenciesComponent } from './currencies/currencies.component';
+import { CurrencyComponent } from './currencies/currency/currency.component';
+import { CurrencyResolverService } from './services/currency.resolver.service';
 
 const routes: Routes = [
-  { path: 'currency', component: CurrencyComponent },
-  { path: 'currency/:id', component: CurrencyDetailsComponent },
+  { path: 'currency', component: CurrenciesComponent },
+  { path: 'currency/:id', component: CurrencyComponent, resolve: {
+    currency: CurrencyResolverService
+  } },
   { path: '', redirectTo: '/currency', pathMatch:'full'},
 ];
 

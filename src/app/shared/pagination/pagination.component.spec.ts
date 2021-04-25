@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CurrencyDetailsComponent } from './currency-details.component';
+import { PaginationComponent } from './pagination.component';
 
-describe('CurrencyDetailsComponent', () => {
-  let component: CurrencyDetailsComponent;
-  let fixture: ComponentFixture<CurrencyDetailsComponent>;
+describe('PaginationComponent', () => {
+  let component: PaginationComponent;
+  let fixture: ComponentFixture<PaginationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CurrencyDetailsComponent ]
+      declarations: [ PaginationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CurrencyDetailsComponent);
+    fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

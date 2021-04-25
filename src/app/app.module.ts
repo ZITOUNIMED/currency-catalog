@@ -3,20 +3,35 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CurrencyComponent } from './currency/currency.component';
-import { CurrencyDetailsComponent } from './currency/currency-details/currency-details.component';
+import { currenciesFactory } from './services/currencies.factory';
+import { CurrenciesService } from './services/currencies.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CurrenciesComponent } from './currencies/currencies.component';
+import { CurrencyComponent } from './currencies/currency/currency.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrencyComponent,
-    CurrencyDetailsComponent
+    CurrenciesComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: CurrenciesService,
+      useFactory: currenciesFactory,
+      deps: [HttpClient],
+   },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-header">
+        <h1>Available currencies</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-8 row">
+                <div class="col-9">
+                    <form class="input-group mb-3" (submit)="onSubmit()">
+                        <div class="input-group-prepend">
+                          <button type="submit" class="input-group-text " id="basic-addon1">
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search" [formControl]="searchValueCtrl" >
+                    </form>
+                </div>
+                <div class="col-3">
+                    <select class="fixed-select-field" [formControl]="searchFieldCtrl">
+                        <option [value]="'id'">ID</option>
+                        <option [value]="'code'">CODE</option>
+                        <option [value]="'name'">NAME</option>
+                        <option [value]="'currency_type'">TYPE</option>
+                    </select>
+                </div>
+                
+            </div>
+            <div class="col-6"></div>
+        </div>
+        <div class="row">
+            <div *ngFor="let currency of currencies" class="col-lg-2 col-md-3 col-sm-6 item">
+                ID: {{currency.code}} Type: {{currency.currency_type}} Symbol: {{currency.symbol}}
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        <div class="row">
+            <div class="col">
+                <select class="fixed-select-field" [formControl]="maxItemsPerPageCtrl">
+                    <option [value]="5">5</option>
+                    <option [value]="10">10</option>
+                    <option [value]="50">50</option>
+                </select>
+            </div>
+            <div class="col">
+                <app-pagination 
+                [maxItemsPerPage]="maxItemsPerPageCtrl.value"
+                [totalItems]="allCurrencies?.length || 0"
+                (selectedPageChaged)="pageChaged($event)"></app-pagination>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
