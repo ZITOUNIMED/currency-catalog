@@ -46,9 +46,10 @@ export class CurrenciesComponent implements OnInit {
 
   filterCurrencies(searchValue: string, searchField: string , allCurrencies: CurrencyModel[]){
     return allCurrencies.filter(currency => {
-      if(currency['code'] && searchValue) {
+       // @ts-ignore
+      if(currency.attributes[searchField] && searchValue) {
         // @ts-ignore
-        return currency[searchField].toUpperCase().includes(searchValue.toUpperCase());  // ts-ignore
+        return currency.attributes[searchField].toUpperCase().includes(searchValue.toUpperCase());  // ts-ignore
       }
       return true;
     });

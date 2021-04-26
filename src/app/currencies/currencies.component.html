@@ -23,13 +23,13 @@
                         <option [value]="'currency_type'">TYPE</option>
                     </select>
                 </div>
-                
+
             </div>
             <div class="col-6"></div>
         </div>
         <div class="row">
             <div *ngFor="let currency of currencies" class="col-lg-2 col-md-3 col-sm-6 item">
-                ID: {{currency.code}} Type: {{currency.currency_type}} Symbol: {{currency.symbol}}
+                ID: {{currency.attributes.code}} Type: {{currency.attributes.currency_type}} Symbol: {{currency.attributes.symbol}}
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
                 </select>
             </div>
             <div class="col">
-                <app-pagination 
+                <app-pagination
                 [maxItemsPerPage]="maxItemsPerPageCtrl.value"
                 [totalItems]="allCurrencies?.length || 0"
                 (selectedPageChaged)="pageChaged($event)"></app-pagination>
