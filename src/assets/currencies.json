@@ -89,7 +89,8 @@
       "native_symbol":"",
       "category":"category1"
     },
-    {
+  }
+  {
     "id":"id2",
     "attributes":{
       "code":"code2",
